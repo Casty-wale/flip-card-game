@@ -1,0 +1,277 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FFFCD3;
+    font-family: 'Poppins';
+}
+
+.content{
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+}
+
+.card{
+    border: #00345900;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.card div{
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.card .front{
+    background-color: #e68f3200;
+    border: 1px solid #e68f3200;
+    border-radius: 10px;
+    height: 180px;
+    margin:10px;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.front:hover{
+    transition: 0.5s;
+    padding-left: 10px;
+}
+
+.card .back{
+    background-color: #D4531F;
+    transform: rotateY(180deg);
+    border: 1px solid #D4531F;
+    height: 180px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s e ase;
+}
+
+.back p{
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Poppins';
+    margin-bottom: 8px;
+}
+
+.card.flipped{
+    transform: rotateY(180deg);
+}
+
+.flip{
+    width: 180px;
+    padding: 69px 70px;
+    background-color:#E68E32;
+    cursor: pointer;
+    font-size: 30px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    border:none;
+    border-radius: 7px;
+    color: #094D2C;
+}
+.flip:hover{
+    transition: 0.5s;
+    background-color: #d16f19;
+}
+
+
+.theflip{
+    padding: 10px 26px;
+    background-color: #094D2C;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 14px;
+    border: 2px solid #D4531F;
+}
+
+.theflip:hover{
+    transition: 0.8s;
+    background-color: #16BA6A;
+}
+
+
+/* popup */
+
+.popup{
+    width: 500px;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    align-items: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+
+}
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000.5;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.blurs{
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.popup img{
+    width:100px;
+    margin-top: -50px;
+    margin-left: 160px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 2px 3px #333;
+}
+
+.popup h2{
+    font-size: 40px;
+    font-weight: 500;
+    margin: 30px 0 10px ;
+    text-align: center;
+}
+
+.popup #para{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px;
+}
+
+.popup button{
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: 10px;
+    background-color: green;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-color: white;
+}
+
+/* @media */
+ @media screen and (max-width: 480px) {
+    .card .front{
+        height: 190px;
+    }
+
+    .front:hover{
+        transition: 0.3s;
+        padding-left: 3px;
+    }
+
+    .card{
+        width: 150px;
+    }
+
+    .flip{
+        width: 105px;
+        padding: 79px 32px; 
+        font-size: 20px;
+        font: 500;
+
+    } 
+
+    .theflip{
+        padding: 5px 10px;
+}
+.back p{
+    font-size: 11px;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+ }
+
+/* popup */
+
+@media screen and (max-width: 450px){ 
+    .popup{
+        width: 250px;
+        position: absolute;
+    }
+
+    .popup img{
+        width: 50px;
+        margin-left: 70px;
+        margin-top: -25px;
+
+    }
+
+    .popup button{
+        width: 50%;
+        padding: 10px 13px;
+        font-size: 10px;
+        margin-left: 50px;
+        align-items: center;
+    }
+
+    .popup h2{
+        font-size: 17px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .popup #para{
+        font-size: 13px;
+        font-weight: 500;
+    }
+}

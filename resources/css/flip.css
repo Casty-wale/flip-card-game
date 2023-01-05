@@ -1,0 +1,398 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(239 246 255);
+    font-family: 'Poppins';
+}
+
+/* first popup card as welcome cards */
+.my-popup{
+    width: 500px;
+    background-color: rgb(239 246 255);
+    border-radius: 5px;
+    position: absolute;
+    top: 5%;
+    left: 32.1%;
+    align-items: center;
+    padding: 0 30px 30px;
+    color: #333;
+    display: none;
+    transition: transform 0.5s, top 0.5s;
+}
+
+.my-popup img{
+    width:100px;
+    margin-left: 160px;
+    background-color: white;
+    box-shadow: 0 2px 3px rgb(202, 202, 202);
+}
+
+.my-popup h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin: 5px 0 16px ;
+    text-align: center;
+}
+
+.my-popup #param{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    /* margin: 4px; */
+}
+
+.my-popup button{
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: 10px;
+    background-color: rgb(8, 104, 8);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-color:rgb(239 246 255);
+;
+}
+
+/* end of first popup card */
+
+
+
+/* first popup card as welcome cards */
+.reddy{
+    width: 500px;
+    background-color: rgb(239 246 255);
+    border-radius: 5px;
+    position: absolute;
+    top: 5%;
+    left: 32.1%;
+    align-items: center;
+    padding: 0 30px 30px;
+    color: #333;
+    display: none;
+    transition: transform 0.5s, top 0.5s;
+}
+
+.reddy img{
+    width:100px;
+    margin-left: 160px;
+    background-color: white;
+    box-shadow: 0 2px 3px rgb(202, 202, 202);
+}
+
+.reddy h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin: 5px 0 16px ;
+    text-align: center;
+}
+
+.reddy #param{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center; 
+}
+
+.reddy button{
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: 10px;
+    background-color: rgb(8, 104, 8);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-color:rgb(239 246 255);
+}
+
+/* end of first popup card */
+.content{
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+}
+
+.card{
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.card div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.card .front{
+    background-color: #114B5F;
+    border: 1px solid #114B5F;
+    border-radius: 10px;
+    cursor: pointer;
+    margin:10px;
+    transition: all 0.3s ease;
+}
+.flip{
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    font-size: 60px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #E4FDE1;
+}
+
+.card .back{
+    background-color: #028090;
+    border: 1px solid #028090;
+    transform: rotateY(180deg); 
+    height: 180px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: all 0.3s e ase;
+}
+
+.theflip{
+    position: absolute;
+    padding: 10px 20px;
+    background-color: #114B5F;
+    border: 2px solid #6b95a3;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 7px;
+    font-weight: 400;
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+.back p{
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Poppins';
+    margin-bottom: 8px;
+    color: #E4FDE1;
+}
+
+.back .data{
+    font-size: 22px;
+    font-family: 'Poppins';
+    padding-top: 40px;
+    margin-bottom: 8px;
+    color: #E4FDE1;
+}
+
+.card.flipped{
+    transform: rotateY(180deg);
+}
+
+/* popup */
+.popup{
+    width: 500px;
+    background-color: rgb(239 246 255);
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    align-items: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+
+}
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000.5;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.blurs{
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.popup img{
+    width:100px;
+    margin-top: -50px;
+    margin-left: 160px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 2px 3px #333;
+}
+
+.popup h2{
+    font-size: 40px;
+    font-weight: 500;
+    margin: 30px 0 10px ;
+    text-align: center;
+}
+
+.popup #para{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px;
+}
+
+.popup button{
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: 10px;
+    background-color: green;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-color: white;
+}
+
+/* @media */
+/* first popup @media */
+@media screen and (max-width: 450px){ 
+    .my-popup{
+        width: 300px;
+        position: absolute;
+        left: 33px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .my-popup img{
+        width: 100px;
+        margin-left: 70px;
+    }
+
+    .my-popup button{
+        width: 80%;
+        padding: 10px 13px;
+        font-size: 10px;
+        margin-left: 20px;
+        align-items: center;
+    }
+
+    .my-popup h2{
+        font-size: 17px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .my-popup #param{
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+}
+/* end of first popup */
+
+ @media screen and (max-width: 480px) {
+    .card .front{
+        height: 190px;
+    }
+
+    .front:hover{
+        transition: 0.3s;
+        padding-left: 3px;
+    }
+
+    .card{
+        width: 150px;
+    }
+
+    .flip{
+        width: 105px;
+        padding: 79px 32px; 
+        font-size: 20px;
+        font: 500;
+    } 
+
+    .theflip{
+        padding: 5px 10px;
+        margin-left: 2px;
+}
+    .back p{
+        font-size: 10px;
+        font-weight: 500;
+        text-align: center;
+        font-family: 'Poppins';
+}
+
+ }
+
+/* popup */
+
+@media screen and (max-width: 450px){ 
+    .popup{
+        width: 250px;
+        position: absolute;
+    }
+
+    .popup img{
+        width: 50px;
+        margin-left: 70px;
+        margin-top: -25px;
+
+    }
+
+    .popup button{
+        width: 50%;
+        padding: 10px 13px;
+        font-size: 10px;
+        margin-left: 50px;
+        align-items: center;
+    }
+
+    .popup h2{
+        font-size: 17px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .popup #para{
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .back .data{
+        font-size: 18px;
+        padding-top: 35px;
+    }
+}
